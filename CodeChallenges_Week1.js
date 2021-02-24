@@ -31,11 +31,23 @@ const rabbit = {
     addItem(item) {
       this.contents.push(item);
       //console.log("The cart contains:" cart.contents); <-- Why does this not work?
+    }, //Make sure to have a common to separate the different methods
+    
+  removeItem(item) {
+    let check= this.contents.includes(item); //includes() methode checks to see if the array contains the item inside of the parenthesis.
+      if(check===true) {
+        this.contents.pop(item);
+        return console.log("Duplicate items have been removed.");
+      } else {
+        return console.log("This item is not in the cart.");
+      }
     }
   };
   cart.addItem("laptop");
   console.log("The cart contains:", cart.contents);
-  
+  cart.removeItem("laptop"); //Removes duplicate items from the cart.
+  console.log("The cart contains:", cart.contents); //Will show that the laptop is no longer in the cart.
+  cart.removeItem("pizza"); //Check to see if the removeItem() method will work for an item that is not already in the cart.
   
   // 4 - lever
   const lever= {
@@ -54,3 +66,4 @@ const rabbit = {
     }
   };
   angryBird.throw("owl", "rock");
+  
