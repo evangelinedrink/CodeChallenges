@@ -66,4 +66,60 @@ const rabbit = {
     }
   };
   angryBird.throw("owl", "rock");
+
   
+  //Code Challenge: Class Inheritance
+  class Monster {
+    constructor(type, color) {
+        this.type = type;
+        this.color = color;
+        this.isScary = true;
+    }
+    roar() {
+        console.log(`The ${this.color} ${this.type} lets out a tremendous roar!`);
+    }
+}
+
+class Demon extends Monster {
+  constructor(type, color, power) {
+    super(type, color);
+    this.power= power;
+  }
+  hunting() {
+    alert(`Better run fast, the ${this.color} ${this.type} demon is coming after you! If it catches you, it will ${this.power} you against a wall and then break your neck.`);
+  }
+}
+const demonChild= new Demon("poltergeist", "transparent","throw"); //Creating a new object using Demon class
+demonChild.hunting(); //Calling the hunting() method for demonChild object.
+
+class Dragon extends Monster {
+    constructor(type, color, element) {
+        super(type, color);
+        this.element = element;
+    }
+    fly() {
+        console.log(`The ${this.color} ${this.element} ${this.type} flaps its wings and begins to fly.`);
+    }
+  
+  behavior() {
+    console.log(`The ${this.color} ${this.type} curls its lips and smiles at you before unleashing ${this.element} in the air.`)
+  }
+}
+
+class Werewolf extends Monster {
+    constructor(type, color) {
+        super(type, color);
+    }
+    howl() {
+        console.log(`The ${this.type} howls loudly.`);
+    }
+}
+
+//New Werewolf object
+const werewolf1= new Werewolf("werewolf", "redish-brown");
+werewolf1.howl(); //Call the howl() method for werewolf1 object.
+
+const woodDragon = new Dragon("dragon", "brown", "wood");
+woodDragon.fly(); //Call the fly() method for the woodDragon object.
+woodDragon.roar(); //Call the roar() method for the woodDragon object.
+woodDragon.behavior(); //Call the behavior() method for the woodDragon object.
