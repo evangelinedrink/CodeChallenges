@@ -123,3 +123,33 @@ const woodDragon = new Dragon("dragon", "brown", "wood");
 woodDragon.fly(); //Call the fly() method for the woodDragon object.
 woodDragon.roar(); //Call the roar() method for the woodDragon object.
 woodDragon.behavior(); //Call the behavior() method for the woodDragon object.
+
+
+//Code Challenge: Map Array Method
+// 1: Use the map method on the numbers array given at line 2 to add 5 to each number and put the results into a new array.
+const numbers = [1, 1, 2, 3, 5];
+const numbersAddFive = numbers.map(n=> n+5); //Using the Map() array method to add 5 to each value in the numbers array.
+// The below line should console.log: [6, 6, 7, 8, 10]
+console.log(numbersAddFive); 
+
+// 2: Use the map method on the same numbers array to turn it into an array of strings, and add a colon and a space after each number.
+const numbersReformatted = numbers.map(n => n.toString() + ": "); //Making values into the numbers array into a string. Then, the ": " will be added to each value in the numberReformatted array.
+//const numbersReformatted= numbers.join(": ");
+ //The below line should console.log: ["1: ", "1: ", "2: ", "3: ", "5: "] 
+ console.log(numbersReformatted);
+
+// 3: Use the map method on the words array on line 13 to remove the "s" from the end of each word.
+const words = ["planes", "trains", "automobiles"];
+const singularWords = words.map(n=>n.slice(0,-1)); //Slice() method is used to extract parts of a string and returns the extracted sections in the new string. Inside of the slice() parenthesis (the parameters), -1 is the last part of a string (in this case s). To extract the whole string, 0 is the parameter to use with no end value, however placing the -1 means to extract everything except the last letter of the word. 
+// The below line should console.log: ["plane", "train", "automobile"]
+console.log(singularWords);
+
+// 4: Use the map method on the words array from line 13 to return an array with just the first letter of each word
+const firstLetters = words.map(n=> n.slice(0,1)); //Slice method with parameters (0,1) will extract only the first word in the string and return it in the new array.
+// The below line should console.log: ["p", "t", "a"]
+console.log(firstLetters);
+
+// Bonus: Use the map method on the words array to return an array with just the first letter of each word capitalized (along with the rest of the word in lower case
+const capitalizedWords = words.map(n=> n[0].toUpperCase() + n.slice(1)); //n[0] is the array index value for the first letter of the string. The slice() method extracts parts of a string and returns the extracted parts. The n.slice(1) will take all the letters after the first value. The plus sign adds the capitalized first letter with the rest of the word (which is lower case). 
+// The below line should console.log: ["Planes", "Trains", "Automobiles"]
+console.log(capitalizedWords);
