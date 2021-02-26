@@ -155,7 +155,7 @@ const capitalizedWords = words.map(n=> n[0].toUpperCase() + n.slice(1)); //n[0] 
 console.log(capitalizedWords);
 
 
-//Code Challenge: Filter
+//Code Challenge: Filter Array Method
 //1: Use the filter method to ilter out only the pets that have 5 or less letters in their name.  
 const pets = ["goldfish", "dog", "turtle", "tiger"]
 const petsShortNames = pets.filter(n=> n.length<=5); //gets the values in the array that have a length of 5 or less characters. n represents each value (like goldfish).
@@ -172,3 +172,8 @@ const numbers = [3, 7, 4, 5, 10];
 const numbersBiggerThanFour = numbers.filter(n=> n>4);
 // The below line should console.log: [7, 5, 10]
 console.log(numbersBiggerThanFour);
+
+//Bonus: Filter out only the even numbers. Research the use of the modulo operator: %
+const evenNumbers = numbers.filter(n=> n % 2===0); //Modulo operator (%) returns the remainder of the left and right operand. If the number is divisible by 2, then the remainder will be 0. This will create an array for only even numbers.
+// The below line should console.log: [4, 10]
+console.log(evenNumbers);
