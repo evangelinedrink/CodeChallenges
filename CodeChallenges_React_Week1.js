@@ -153,3 +153,22 @@ console.log(firstLetters);
 const capitalizedWords = words.map(n=> n[0].toUpperCase() + n.slice(1)); //n[0] is the array index value for the first letter of the string. The slice() method extracts parts of a string and returns the extracted parts. The n.slice(1) will take all the letters after the first value. The plus sign adds the capitalized first letter with the rest of the word (which is lower case). 
 // The below line should console.log: ["Planes", "Trains", "Automobiles"]
 console.log(capitalizedWords);
+
+
+//Code Challenge: Filter
+//1: Use the filter method to ilter out only the pets that have 5 or less letters in their name.  
+const pets = ["goldfish", "dog", "turtle", "tiger"]
+const petsShortNames = pets.filter(n=> n.length<=5); //gets the values in the array that have a length of 5 or less characters. n represents each value (like goldfish).
+// The below line should console.log: ["dog", "tiger"]
+console.log(petsShortNames);
+
+//2: Use the filter method on the same pets array. Filter out only the pets whose names start with the letter 't'.
+const petsTNames = pets.filter(n=> n[0]==="t"); //n[0] is the index value for the first character in the array. This means it takes the first letter of each word in the array. When n[0]==="t" means that if the first letter is t, then place this word in the new array petsTNames.
+// The below line should console.log: ["turtle", "tiger"] 
+console.log(petsTNames);
+
+//3: Use the filter method on the numbers array given at line 13. Filter out only the numbers that are greater than 4.
+const numbers = [3, 7, 4, 5, 10];
+const numbersBiggerThanFour = numbers.filter(n=> n>4);
+// The below line should console.log: [7, 5, 10]
+console.log(numbersBiggerThanFour);
