@@ -191,3 +191,9 @@ const numbers = [ 100, 3, 4, 1, 2];
 const total = numbers.reduce((a,c)=> a*c);
 // The below line should console.log: 2400
 console.log(total); 
+
+//Bonus: Use reduce to flatten the given array of arrays (this is called a two-dimensional array), named arrays, by using the Array.concat() method inside the callback method for reduce.
+const arrays = [["how", "now"], ["brown", "cow"]];
+const flattenedArray = arrays.reduce((a,c) => a.concat(c)); //Parameter a is the first array, while parameter c is the second array. Concat() method combines two arrays into one array.
+// The below line should console.log: ["how", "now", "brown", "cow"]
+console.log(flattenedArray);
