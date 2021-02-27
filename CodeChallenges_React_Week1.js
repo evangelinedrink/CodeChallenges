@@ -177,3 +177,17 @@ console.log(numbersBiggerThanFour);
 const evenNumbers = numbers.filter(n=> n % 2===0); //Modulo operator (%) returns the remainder of the left and right operand. If the number is divisible by 2, then the remainder will be 0. This will create an array for only even numbers.
 // The below line should console.log: [4, 10]
 console.log(evenNumbers);
+
+
+//Code Challenge: Reduce
+// 1: Use reduce to concatenate the letters in the given letters array into a single string "hello".
+const letters = ['h', 'e', 'l', 'l', 'o']
+const greeting = letters.reduce((a,c)=> a+c ); //Using the concatenation operator (+) to combine/concatenate two string values together.
+// The below line should console.log: "hello"
+console.log(greeting) 
+
+// 2: Use reduce to get the total of multiplying all the numbers in the given numbers array.
+const numbers = [ 100, 3, 4, 1, 2];
+const total = numbers.reduce((a,c)=> a*c);
+// The below line should console.log: 2400
+console.log(total); 
