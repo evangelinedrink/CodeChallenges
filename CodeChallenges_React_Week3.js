@@ -267,3 +267,38 @@ const GAMES = [
   }
   
   ReactDOM.render( <App />, document.getElementById("root"));
+
+
+  
+  //React Challenge: Lifting State Up and Function Components
+  class App extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      bootcampName: "Nucamp"
+    };
+  }
+  
+  render() {
+    return (
+     <div> {/*Div element is used because at least two statements will be displayed in the web page. If only one element is displayed on the web page, for example statement in line 12, then a Div element would not be needed.*/}
+      <Welcome bootcamp={this.state.bootcampName}/> {/*This creates the variable "bootcamp" that can be used in the Welcome Component.  It takes the object value in this.state.bootcampName from lines 4-5.*/}
+      <Welcome2 bootcamp2={this.state.bootcampName}/> {/*To be used in the Object Destructuring for the Welcome2 component.*/}
+     </div>   
+      );
+  }  
+}
+
+function Welcome(props) {
+    return ( //Function components don't use the render() method.
+      <h1>Welcome to {props.bootcamp}!</h1> //When lifting a state, the computer will pass the state information to children components as props.  That is why this line has props.bootcamp. Function components don't use the "this" keyword. Welcome component is the child component of App component.
+    );  
+}
+
+function Welcome2({bootcamp2}) { //Using the Object Destructuring Method in a function.
+  return(
+    <h2> Welcome to {bootcamp2}!</h2>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
