@@ -87,4 +87,33 @@ function validate() {
     else
       alert("Username must contain only alphanumeric characters, contain a mininum of two characters, and end with a digit.");
   }
+
   
+  //React Practice: Controlled Forms
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state({input: " "});
+      this.formUpdate= this.formUpdate.bind(this); //This will update when the form's input has been changed.
+    }
+    
+    formUpdate(event) { //Defining the formUpdate method. Every time a change happens in the form, the formUpdate method will be called with the event object. This is done thanks to the onChange react even in line 15.  formUpdate updates this.state.input thanks to setState.
+      this.setState({input: event.target.value});
+    }
+    render() {
+      return (
+      <div className="form-group container">
+        <label>Controlled Form Input</label>
+        <input type="text" className="form-control" area-describedby="emailHelp" placeholder="Update input here" value={this.state.input} onChange={this.formUpdate}/> //The onChange react event will trigger the formUpdate method when there is a change in the form's input . onChange even calls formUpdate and passes the event object. value will be changed according to what is typed in the input form (line 17).  The value will then go into the empty string in the this.state.input from line 4.
+        <large className="form-text text-muted">
+        {this.state.input} /*Pass the state input value to the value of the email form, which will then be the value of the output text.*/
+        </large>
+       </div>
+      );
+    }
+  }
+  
+  ReactDOM.render(
+  <App/>,
+  document.getElementById("root")
+  );
